@@ -1,205 +1,228 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aprenda HTML5 e CSS3 de forma simples e objetiva desenvolvendo passo a passo.">
-    <!-- Máximo 55 caracteres com os espaços -->
-    <meta name="keywords" content="html, html5, css, css3, aprenda, one page, site...">
-    <meta name="author" content="Emmanuel L. Nogueira"> <!-- Desenvolvedor do index.html -->
-    <title>Front-end - One Page Site</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="NEXUS - Soluções inovadoras em TI para transformar seus negócios digitais.">
+    <meta name="keywords" content="TI, tecnologia, desenvolvimento web, software, NEXUS, IT solutions">
+    <meta name="author" content="NEXUS Team">
+    <title>NEXUS - Soluções em Tecnologia</title>
+    <link rel="shortcut icon" href="src/public/img/favicon.jfif" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/public/css/style.css">
 </head>
 
 <body>
-    <header id="inicio">
-        <div class="layout flex">
-            <div class="logo">
-                <img src="img/logo_front.png" alt="Logotipo FRONT-END">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#inicio">
+                    <img src="src/public/img/logo.jfif" alt="Logotipo NEXUS" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                </div>
             </div>
-            <nav class="menu"> <!-- <nav> - comando para navegação -->
-                <input type="checkbox" name="check" id="check">
-                <label for="check" class="label_menu">&#x2630;</label> <!-- #x2630 - icone de hamburguer -->
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#conteudo">Conteúdo</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <!-- Destaque -->
-    <main>
-        <div class="layout">
-            <h1>Front-end</h1>
-            <h2>Damos vidas aos seus negócios digitais.</h2>
-            <a href="#" target="_blank" class="botao">Saiba+</a>
+    <main id="inicio" class="hero-section text-center">
+        <div class="container py-5">
+            <h1 class="display-4 fw-bold">NEXUS</h1>
+            <p class="lead mb-4">Transformando ideias em soluções digitais inovadoras</p>
+            <a href="#contato" class="btn btn-primary btn-lg">Fale Conosco</a>
         </div>
     </main>
 
-    <!-- Sobre -->
-    <section id="sobre">
-        <div class="layout flex2">
-            <div class="destaque_sobre flex2">
-                <img src="img/html5css3.jpg" alt="HTML5 e CSS3">
-            </div>
-            <div class="texto_sobre">
-                <h2>Font-end</h2>
-                <p>Desenvolvimento web front-end é o desenvolvimento da interface gráfica do usuario de um site, atraves
-                    do uso do HTML, CSS e JavaScript, para que os usuários possam visualizar e interagir com esse site.
-                </p>
-                <div class="topico_sobre flex2"><img src="img/html5.png" alt="HTML5"></div>
-                <p>HTML5</p>
-                <div class="topico_sobre flex2"><img src="img/css3.png" alt="CSS3"></div>
-                <p>CSS3</p>
-                <div class="topico_sobre flex2"><img src="img/js.png" alt="JavaScript"></div>
-                <p>JavaScript</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- One Page -->
-    <section id="onepage">
-        <div class="layout flex3">
-            <div class="texto_site">
-                <h2>One Page Site</h2>
-                <p>Ideal para negócios de pequeno ou médio porte o site One Page é um site onde você inclui todas as
-                    informações que o visitante precisa de forma objetiva e criativa em uma única página.</p>
-            </div>
-
-            <div class="video">
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/8JCG7gkg6fs?si=ZWdlE9E9VqJtqMXP&amp;controls=0"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wireframe PDF -->
-    <section id="wireframe">
-        <div class="layout flex2">
-            <div class="texto_wire">
-                <h2>Wireframe</h2>
-                <p>Wireframe é uma representação visual da estrutura básica de uma página. Ele deve ser feito de maneira
-                    mais simples possível, mostrando apenas o essencial, como uma espécie de rascunho, sem cores ou
-                    imagens. Clique no botão <span>ou escaneire o QR CODE</span> para obter o wireframe desta página.
-                </p>
-                <a href="wireframe.pdf" target="_blank" class="botao">PDF</a>
-            </div>
-            <div class="qrcode">
-                <img src="img/qrcode_wireframe.png" alt="QR CODE do wireframe do site">
-            </div>
-        </div>
-    </section>
-
-    <!-- Conteúdo -->
-    <section id="conteudo">
-        <div class="layout">
-            <h2>Conteúdos</h2>
-
-            <div class="cards flex4">
-                <div class="card">
-                    <img src="img/estruturahtml.png" alt="Estrutura HTML5">
-                    <h3>HTML5</h3>
-                    <p>O HTML é usado para exibir o conteúdo na WEB e a estrutura do documento em partes conforme
-                        indicado neste cartão.</p>
-                    <a href="#" target="_blank" class="botao">Saiba+</a>
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Sobre a NEXUS</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="src/public/img/logo.jfif" alt="Equipe NEXUS" class="img-fluid rounded shadow"
+                        style="max-width: 400px;">
                 </div>
-                <div class="card">
-                    <img src="img/boxmodel.png" alt="Box Model">
-                    <h3>CSS3 - Box Model</h3>
-                    <p>O Box Model relaciona as propriedades descritas neste cartão para compor a dimensão do elemento.
-                    </p>
-                    <a href="#" target="_blank" class="botao">Saiba+</a>
-                </div>
-                <div class="card">
-                    <img src="img/javascript.png" alt="JavaScript">
-                    <h3>JavaScript</h3>
-                    <p>O JavaScript é uma linguagem leve, interpretada e baseada em objetos com funções, mais conhecida
-                        como a linguagem de script para páginas WEB.</p>
-                    <a href="#" target="_blank" class="botao">Saiba+</a>
+                <div class="col-lg-6">
+                    <p class="mb-4">Somos uma empresa de TI dedicada a oferecer soluções inovadoras e personalizadas. Na
+                        NEXUS, combinamos expertise técnica com visão estratégica para impulsionar o sucesso dos seus
+                        negócios no mundo digital.</p>
+                    <div class="d-flex flex-wrap gap-4 justify-content-center">
+                        <div class="tech-item text-center">
+                            <img src="src/public/img/html5.png" alt="HTML5" width="50">
+                            <p class="mt-2">HTML5</p>
+                        </div>
+                        <div class="tech-item text-center">
+                            <img src="src/public/img/css3.png" alt="CSS3" width="50">
+                            <p class="mt-2">CSS3</p>
+                        </div>
+                        <div class="tech-item text-center">
+                            <img src="src/public/img/js.png" alt="JavaScript" width="50">
+                            <p class="mt-2">JavaScript</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <address>
-        <div class="layout flex6">
-            <div class="contato">
-                <a href="https://api.whatsapp.com/send?phone=5511986748440" target="_blank">
-                    <img src="img/whatsapp.png" alt="Abrir conversa">
-                    <p>(11) 98674-8440</p>
-                </a>
-                <img src="img/fone.png" alt="Celular">
-                <p>(11) 98674-8440</p>
-            </div>
-
-            <div id="endereco">
-                <a href="https://maps.app.goo.gl/kNsBUHbLoWUUojfe7" target="_blank">
-                    <img src="img/mapa.png" alt="Google Maps" class="icone_mapa">
-                </a>
-                <img src="img/local.png" alt="Local" class="icone_local">
-                <p>R. João Chagas, 89</p>
-                <p>Jardim Brasilia</p>
-                <p>São Paulo - SP</p>
-
-                <a href="mailto:emmanuellacerd4@gmail.com?subject=FRONTEND">
-                    <img src="img/email.png" alt="E-mail" title="Enviar E-mail">
-                    <p>emmanuellacerd4@gmail.com</p>
-                </a>
-                <p class="dados">&#128064; Endereço e dados de contatos fictícios</p>
-            </div>
-
-            <div id="google_maps">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0144344353066!2d-46.49630082454596!3d-23.56792506183361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce670db0e96759%3A0x776654c2a349b98!2sR.%20Jo%C3%A3o%20Chagas%2C%2089%20-%20Jardim%20Brasilia%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003585-130!5e0!3m2!1spt-BR!2sbr!4v1726615019917!5m2!1spt-BR!2sbr"
-                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section id="servicos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Nossos Serviços</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/web-dev.jpg" class="card-img-top" alt="Desenvolvimento Web">
+                        <div class="card-body">
+                            <h3 class="card-title">Desenvolvimento Web</h3>
+                            <p class="card-text">Sites modernos, responsivos e otimizados para o seu negócio.</p>
+                            <a href="#contato" class="btn btn-outline-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/app-dev.jpg" class="card-img-top" alt="Desenvolvimento de Apps">
+                        <div class="card-body">
+                            <h3 class="card-title">Desenvolvimento de Apps</h3>
+                            <p class="card-text">Aplicativos móveis personalizados para iOS e Android.</p>
+                            <a href="#contato" class="btn btn-outline-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/consulting.jpg" class="card-img-top" alt="Consultoria em TI">
+                        <div class="card-body">
+                            <h3 class="card-title">Consultoria em TI</h3>
+                            <p class="card-text">Soluções estratégicas para otimizar sua infraestrutura tecnológica.</p>
+                            <a href="#contato" class="btn btn-outline-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </address>
+    </section>
 
-    <footer>
-        <div class="layout flex5">
-            <div class="copyright">
-                <p>&#169; Somente para fins educativos.</p>
+    <section id="portfolio" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Portfólio</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/project1.jpg" class="card-img-top" alt="Projeto 1">
+                        <div class="card-body">
+                            <h3 class="card-title">Plataforma E-commerce</h3>
+                            <p class="card-text">Solução completa para vendas online com integração de pagamentos.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/project2.jpg" class="card-img-top" alt="Projeto 2">
+                        <div class="card-body">
+                            <h3 class="card-title">Aplicativo de Gestão</h3>
+                            <p class="card-text">App mobile para gestão de equipes e projetos em tempo real.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/project3.jpg" class="card-img-top" alt="Projeto 3">
+                        <div class="card-body">
+                            <h3 class="card-title">Sistema Corporativo</h3>
+                            <p class="card-text">Software personalizado para automação de processos empresariais.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="social">
-                <a href="https://www.youtube.com/@Emano.11/" target="_blank">
-                    <img src="img/youtube.png" alt="Canal do YouTube">
-                </a>
-
-                <a href="https://www.linkedin.com/in/emmanuellacerd4/" target="_blank">
-                    <img src="img/linkedin.png" alt="LinkedIn">
-                </a>
-
-                <a href="https://www.instagram.com/emmanuel.lacerd4/" target="_blank">
-                    <img src="img/instagram.png" alt="Instagram">
-                </a>
-
-                <a href="https://www.facebook.com/emmanuel.lacerd4/" target="_blank">
-                    <img src="img/facebook.png" alt="Facebook">
-                </a>
-
-                <a href="https://github.com/emmanuel-lacerd4/" target="_blank">
-                    <img src="img/github.png" alt="GitHub">
-                </a>
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Entre em Contato</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <div class="mb-4">
+                            <a href="https://api.whatsapp.com/send?phone=551121912900" target="_blank"
+                                class="d-flex align-items-center gap-3 text-decoration-none">
+                                <img src="src/public/img/whatsapp.png" alt="WhatsApp" width="30">
+                                <span>(11) 2191-2900</span>
+                            </a>
+                        </div>
+                        <div class="mb-4">
+                            <a href="mailto:contato@nexus.com"
+                                class="d-flex align-items-center gap-3 text-decoration-none">
+                                <img src="src/public/img/email.png" alt="E-mail" width="30">
+                                <span>contato@nexus.com</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://maps.app.goo.gl/Dv7XuAy1Vu4kGnM1A" target="_blank"
+                                class="d-flex align-items-center gap-3 text-decoration-none">
+                                <img src="src/public/img/local.png" alt="Local" width="30">
+                                <span>R. Cel. Luís Americano, 130, Tatuapé, São Paulo - SP</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.765972159767!2d-46.577542724546895!3d-23.540918260841668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ec26cfdcfed%3A0x49e7eb66fd4f1f2!2sSenac%20Tatuap%C3%A9%20-%20Cel.%20Lu%C3%ADs%20Americano!5e0!3m2!1spt-BR!2sbr!4v1745360553388!5m2!1spt-BR!2sbr"
+                        class="w-100 rounded shadow-sm" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <footer class="py-4">
+        <div class="container text-center">
+            <div class="social-links mb-3">
+                <a href="#" target="_blank"><img src="src/public/img/youtube.png" alt="YouTube" width="36"
+                        class="mx-2"></a>
+                <a href="#" target="_blank"><img src="src/public/img/linkedin.png" alt="LinkedIn" width="36"
+                        class="mx-2"></a>
+                <a href="#" target="_blank"><img src="src/public/img/instagram.png" alt="Instagram" width="36"
+                        class="mx-2"></a>
+                <a href="#" target="_blank"><img src="src/public/img/facebook.png" alt="Facebook" width="36"
+                        class="mx-2"></a>
+                <a href="https://github.com/nexus" target="_blank"><img src="src/public/img/github.png" alt="GitHub"
+                        width="36" class="mx-2"></a>
+            </div>
+            <p class="mb-0">© 2025 NEXUS. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <a href="#inicio" id="topo">
-        <img src="img/topo.png" alt="Voltar para o topo do site">
+    <a href="#inicio" id="topo" class="position-fixed bottom-0 end-0 m-4">
+        <img src="src/public/img/topo.png" alt="Voltar ao topo" width="50">
     </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 
 </html>
