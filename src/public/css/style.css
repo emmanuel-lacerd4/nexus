@@ -8,13 +8,12 @@
 }
 
 :root {
-    --bg-light: #f5f7fa;
-    --bg-white: #ffffff;
-    --text-dark: #2d3748;
-    --primary-blue: #007bff;
-    --secondary-blue: #4b6cb7;
-    --accent-gray: #6b7280;
-    --gradient: linear-gradient(135deg, #007bff, #4b6cb7);
+    --bg-dark: #1a1b26;
+    --bg-gradient: linear-gradient(135deg, #2a2b38, #3b3c56);
+    --text-light: #e0e0e0;
+    --primary-blue: #00ddeb;
+    --secondary-blue: #1a73e8;
+    --accent-gray: #b0b0b0;
 
     --titulo: "Roboto", sans-serif;
     --textos: "Inter", sans-serif;
@@ -26,50 +25,58 @@ html {
 
 body {
     font-family: var(--textos);
-    background: var(--bg-white);
-    color: var(--text-dark);
+    background: var(--bg-dark);
+    color: var(--text-light);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
     font-family: var(--titulo);
-    color: var(--text-dark);
+    color: var(--text-light);
 }
 
 header {
-    background: var(--bg-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
+    transition: background-color 0.3s ease;
 }
 
-.navbar-brand img {
-    transition: transform 0.3s;
+.navbar-brand .logo {
+    transition: transform 0.3s ease;
 }
 
-.navbar-brand img:hover {
-    transform: scale(1.05);
+.navbar-brand .logo:hover {
+    transform: scale(1.1);
 }
 
 .nav-link {
-    color: var(--text-dark) !important;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
     color: var(--primary-blue) !important;
 }
 
+.nav-link i {
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover i {
+    transform: scale(1.2);
+}
+
 .hero-section {
+    background: var(--bg-gradient);
     min-height: 80vh;
-    background: var(--gradient);
     display: flex;
     align-items: center;
-    color: var(--bg-white);
     position: relative;
 }
 
@@ -80,7 +87,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
 
@@ -90,130 +97,161 @@ header {
 }
 
 .hero-section h1 {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 3rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section h2 {
+    color: var(--primary-blue);
 }
 
 .hero-section p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+.hero-section i {
+    color: var(--primary-blue);
+    transition: transform 0.3s ease;
+}
+
+.hero-section li:hover i {
+    transform: scale(1.2);
 }
 
 .btn-primary {
     background-color: var(--primary-blue);
     border-color: var(--primary-blue);
     font-family: var(--titulo);
-    padding: 0.75rem 2rem;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
     background-color: var(--secondary-blue);
     border-color: var(--secondary-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
 }
 
-.btn-outline-primary {
-    border-color: var(--primary-blue);
-    color: var(--primary-blue);
-    transition: background-color 0.3s, color 0.3s;
+.btn-primary i {
+    transition: transform 0.3s ease;
 }
 
-.btn-outline-primary:hover {
+.btn-primary:hover i {
+    transform: translateX(5px);
+}
+
+.btn-outline-light {
+    border-color: var(--text-light);
+    color: var(--text-light);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
     background-color: var(--primary-blue);
-    color: var(--bg-white);
+    color: var(--bg-dark);
+    border-color: var(--primary-blue);
 }
 
-#sobre {
-    background: var(--bg-white);
-}
-
-.tech-item p {
-    color: var(--accent-gray);
-    font-size: 0.9rem;
-}
-
-.tech-item img {
-    transition: transform 0.3s;
-}
-
-.tech-item img:hover {
-    transform: scale(1.1);
+#sobre,
+#servicos,
+#portfolio,
+#contato {
+    background: var(--bg-gradient);
 }
 
 .card {
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card-img-top {
     height: 200px;
     object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .card-title {
     color: var(--primary-blue);
-    font-family: var(--titulo);
+    font-size: 1.25rem;
 }
 
 .card-text {
     color: var(--accent-gray);
-}
-
-#contato {
-    background: var(--bg-light);
+    font-size: 0.95rem;
 }
 
 .contact-info a {
-    color: var(--text-dark);
-    transition: color 0.3s;
+    color: var(--text-light);
+    transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
     color: var(--primary-blue);
 }
 
-.contact-info img {
-    transition: transform 0.3s;
+.contact-info i {
+    color: var(--primary-blue);
+    width: 24px;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.contact-info a:hover img {
-    transform: scale(1.1);
+.contact-info a:hover i {
+    transform: scale(1.2);
 }
 
 footer {
-    background: var(--text-dark);
-    color: var(--bg-white);
+    background: var(--bg-dark);
 }
 
-.social-links img {
-    transition: transform 0.3s, opacity 0.3s;
+footer a {
+    transition: color 0.3s ease;
 }
 
-.social-links img:hover {
-    transform: scale(1.15);
-    opacity: 0.9;
+footer a:hover {
+    color: var(--primary-blue);
+}
+
+.social-links i {
+    color: var(--text-light);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: scale(1.2);
+    color: var(--primary-blue);
 }
 
 #topo {
-    opacity: 0.8;
-    transition: opacity 0.3s;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #topo:hover {
     opacity: 1;
+    transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .hero-section {
-        min-height: 60vh;
-    }
+#topo i {
+    color: var(--primary-blue);
+}
 
+@media (max-width: 992px) {
     .hero-section h1 {
         font-size: 2.5rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.5rem;
     }
 
     .hero-section p {
@@ -221,16 +259,41 @@ footer {
     }
 
     .navbar-nav {
-        text-align: center;
-        background: var(--bg-white);
+        background: var(--bg-dark);
         padding: 1rem;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh;
+        text-align: center;
     }
 
-    .nav-item {
-        padding: 0.5rem 0;
+    .hero-section h1 {
+        font-size: 2rem;
     }
 
-    #contato .contact-info {
+    .hero-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem;
+        margin: 0 auto;
+    }
+
+    .hero-section ul {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    .contact-info {
         text-align: center;
     }
 
@@ -240,19 +303,28 @@ footer {
 }
 
 @media (max-width: 576px) {
-    .card {
-        width: 100%;
+    .hero-section h1 {
+        font-size: 1.8rem;
     }
 
-    .hero-section h1 {
-        font-size: 2rem;
+    .hero-section h2 {
+        font-size: 1.1rem;
     }
 
     .hero-section p {
+        font-size: 0.85rem;
+    }
+
+    .btn-primary {
+        padding: 0.5rem 1.5rem;
         font-size: 0.9rem;
     }
 
-    .tech-item img {
-        width: 40px;
+    .card-img-top {
+        height: 150px;
+    }
+
+    .contact-info i {
+        width: 20px;
     }
 }
