@@ -265,88 +265,34 @@ img {
     display: block;
 }
 
-/* RESPONSIVIDADE */
+.community-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 500px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+/* Responsividade */
 @media (max-width: 992px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero-section p {
-        font-size: 1rem;
-    }
-
-    .navbar-nav {
-        background: var(--bg-dark);
-        padding: 1rem;
-        border-radius: 10px;
+    .community-description {
+        font-size: 1.05rem;
+        max-width: 100%;
+        margin: 0 auto 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .hero-section {
-        min-height: 60vh;
+    .community-description {
+        font-size: 0.95rem;
         text-align: center;
-    }
-
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-
-    .hero-section h2 {
-        font-size: 1.3rem;
-    }
-
-    .hero-section p {
-        font-size: 0.9rem;
-        margin: 0 auto;
-    }
-
-    .hero-section ul {
-        text-align: left;
-        display: inline-block;
-    }
-
-    .card-img-top {
-        height: 150px;
-    }
-
-    .contact-info {
-        text-align: center;
-    }
-
-    .contact-info a {
-        justify-content: center;
     }
 }
 
 @media (max-width: 576px) {
-    .hero-section h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-section h2 {
-        font-size: 1.1rem;
-    }
-
-    .hero-section p {
-        font-size: 0.85rem;
-    }
-
-    .btn-primary {
-        padding: 0.5rem 1.5rem;
+    .community-description {
         font-size: 0.9rem;
-    }
-
-    .card-img-top {
-        height: 130px;
-    }
-
-    section {
-        padding: 2rem 1rem;
     }
 }
 
@@ -357,5 +303,76 @@ img {
 
     .hero-section h2 {
         font-size: 1rem;
+    }
+}
+
+/* Estilo específico para o parágrafo da seção Nossa Comunidade Tecnológica */
+#sobre p {
+    font-size: 1.15rem;
+    /* Tamanho da fonte maior para destaque */
+    line-height: 1.7;
+    /* Espaçamento entre linhas para melhor legibilidade */
+    max-width: 500px;
+    /* Limita a largura do texto para facilitar a leitura */
+    font-weight: 400;
+    /* Peso normal, mas pode ser ajustado para 500 se quiser um leve destaque */
+    margin-bottom: 2rem;
+    /* Aumenta a margem inferior para separar do botão */
+    color: var(--text-light);
+    /* Garante consistência com a paleta */
+}
+
+/* Ajuste no botão Saiba Mais para harmonizar */
+#sobre .btn-primary {
+    font-size: 1rem;
+    /* Garante que o botão não fique desproporcional */
+    padding: 0.75rem 2rem;
+    /* Ajusta o padding para um visual mais equilibrado */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 992px) {
+    #sobre p {
+        font-size: 1.05rem;
+        /* Reduz levemente o tamanho da fonte */
+        max-width: 100%;
+        /* Remove a limitação de largura para telas menores */
+        margin: 0 auto 1.5rem;
+        /* Centraliza e ajusta a margem */
+    }
+
+    #sobre .btn-primary {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #sobre p {
+        font-size: 0.95rem;
+        /* Tamanho adequado para dispositivos menores */
+        text-align: center;
+        /* Centraliza o texto em telas pequenas */
+    }
+
+    #sobre .btn-primary {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
+        display: block;
+        /* Faz o botão ocupar a linha inteira */
+        margin: 0 auto;
+        /* Centraliza o botão */
+    }
+}
+
+@media (max-width: 576px) {
+    #sobre p {
+        font-size: 0.9rem;
+        /* Ajuste final para telas muito pequenas */
+    }
+
+    #sobre .btn-primary {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
     }
 }
