@@ -274,36 +274,41 @@ img {
     color: var(--text-light);
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
-    .community-description {
-        font-size: 1.05rem;
-        max-width: 100%;
-        margin: 0 auto 1.5rem;
-    }
+/* Estilo para as imagens dentro dos cards da equipe */
+.img-card {
+    width: 100%;
+    /* Garante que a largura ocupe todo o espaço do card */
+    height: 250px;
+    /* Define uma altura fixa para uniformizar todas as imagens */
+    object-fit: cover;
+    /* Mantém a proporção, cortando o excesso */
+    border-top-left-radius: 10px;
+    /* Arredondamento consistente com o design */
+    border-top-right-radius: 10px;
+    transition: transform 0.3s ease;
+    /* Adiciona transição para o efeito de hover */
 }
 
-@media (max-width: 768px) {
-    .community-description {
-        font-size: 0.95rem;
-        text-align: center;
-    }
+/* Efeito de hover nas imagens */
+.card:hover .img-card {
+    transform: scale(1.05);
+    /* Pequeno zoom ao passar o mouse */
 }
 
-@media (max-width: 576px) {
-    .community-description {
-        font-size: 0.9rem;
-    }
+/* Ajuste para os cards da equipe, garantindo que o conteúdo fique alinhado */
+#equipe .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Garante que o conteúdo do card fique bem distribuído */
 }
 
-@media (max-width: 400px) {
-    .hero-section h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-section h2 {
-        font-size: 1rem;
-    }
+/* Ajuste no texto do card para evitar desalinhamento */
+#equipe .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Estilo específico para o parágrafo da seção Nossa Comunidade Tecnológica */
@@ -330,8 +335,19 @@ img {
     /* Ajusta o padding para um visual mais equilibrado */
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 992px) {
+    .community-description {
+        font-size: 1.05rem;
+        max-width: 100%;
+        margin: 0 auto 1.5rem;
+    }
+
+    .img-card {
+        height: 220px;
+        /* Reduz a altura das imagens em telas menores */
+    }
+
     #sobre p {
         font-size: 1.05rem;
         /* Reduz levemente o tamanho da fonte */
@@ -348,6 +364,21 @@ img {
 }
 
 @media (max-width: 768px) {
+    .community-description {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .img-card {
+        height: 200px;
+        /* Altura ainda menor para dispositivos móveis */
+    }
+
+    #equipe .card {
+        margin-bottom: 1.5rem;
+        /* Adiciona espaçamento entre os cards empilhados */
+    }
+
     #sobre p {
         font-size: 0.95rem;
         /* Tamanho adequado para dispositivos menores */
@@ -366,6 +397,15 @@ img {
 }
 
 @media (max-width: 576px) {
+    .community-description {
+        font-size: 0.9rem;
+    }
+
+    .img-card {
+        height: 180px;
+        /* Ajuste final para telas muito pequenas */
+    }
+
     #sobre p {
         font-size: 0.9rem;
         /* Ajuste final para telas muito pequenas */
@@ -374,5 +414,15 @@ img {
     #sobre .btn-primary {
         font-size: 0.85rem;
         padding: 0.5rem 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1rem;
     }
 }
