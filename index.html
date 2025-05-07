@@ -9,9 +9,8 @@
     <meta name="author" content="NEXUS Team">
     <title>NEXUS - Soluções em Tecnologia</title>
     <link rel="shortcut icon" href="src/public/img/favicon.jfif" type="image/jfif">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="src/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="src/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/public/css/style.css">
 </head>
 
@@ -22,11 +21,14 @@
                 <a class="navbar-brand" href="#inicio">
                     <img src="src/public/img/logo.jfif" alt="Logotipo NEXUS" class="img-logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
+                <!-- Correção no botão do menu mobile -->
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link text-white" href="#inicio"><i
                                     class="fas fa-home me-2"></i>Início</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="#sobre"><i
@@ -41,21 +43,18 @@
         </nav>
     </header>
 
-    <main id="inicio" class="hero-section py-5 text-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h1 class="display-4 fw-bold mb-4">Sobre a NEXUS</h1>
-                    <h2 class="h3 mb-3">Soluções Inovadoras em TI</h2>
-                    <p class="mb-4">Na NEXUS, transformamos ideias em soluções digitais de impacto. Combinamos expertise
-                        técnica e inovação para impulsionar o sucesso do seu negócio.</p>
-                </div>
-                <div class="col-lg-6">
-                    <img src="src/public/img/banner.jpg" alt="Equipe NEXUS" class="img-hero" loading="lazy">
-                </div>
-            </div>
+    <main id="inicio" class="hero-section parallax-bg">
+        <div class="container text-center d-flex justify-content-center align-items-center flex-column">
+            <h1 class="display-4 fw-bold mb-3">Sobre a <span class="text-highlight">NEXUS</span></h1>
+            <h2 class="h4 fw-semibold text-primary mb-4">Soluções Inovadoras em TI</h2>
+            <p class="lead mx-auto hero-description">
+                Transformamos ideias em soluções digitais de impacto. Combinamos expertise técnica e inovação para
+                impulsionar o sucesso do seu negócio.
+            </p>
         </div>
     </main>
+
+
 
     <section id="sobre" class="py-5">
         <div class="container text-white">
@@ -109,8 +108,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card h-100 border-0 bg-dark text-white text-center">
-                        <img src="src/public/img/diego.webp" class="img-card" alt="João F. Dos S. Fonseca"
-                            loading="lazy">
+                        <img src="#" class="img-card" alt="João F. Dos S. Fonseca" loading="lazy">
                         <div class="card-body">
                             <h3 class="card-title">João F. Dos S. Fonseca</h3>
                             <p class="card-text">Especialista em Suporte</p>
@@ -214,7 +212,6 @@
             yearElement.textContent = new Date().getFullYear();
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="src/public/js/bootstrap.min.js"></script>
 </body>
 

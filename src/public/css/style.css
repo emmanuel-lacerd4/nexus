@@ -16,7 +16,6 @@
     --secondary-blue: #1a73e8;
     --accent-gray: #b0b0b0;
     --header-footer-bg: #2c2f33;
-    /* Nova variável para a cor do header e footer */
 
     --titulo: "Roboto", sans-serif;
     --textos: "Inter", sans-serif;
@@ -44,12 +43,38 @@ h5 {
 header {
     backdrop-filter: blur(10px);
     background-color: var(--header-footer-bg);
-    /* Altera para a cor desejada */
 }
 
 .navbar {
     padding: 0.75rem 0;
     transition: background-color 0.3s ease;
+}
+
+.navbar-nav {
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 0.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-blue) !important;
+}
+
+.navbar-nav .nav-link i {
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover i {
+    transform: scale(1.2);
 }
 
 .navbar-brand .logo {
@@ -60,69 +85,56 @@ header {
     transform: scale(1.1);
 }
 
-.nav-link {
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--primary-blue) !important;
-}
-
-.nav-link i {
-    transition: transform 0.3s ease;
-}
-
-.nav-link:hover i {
-    transform: scale(1.2);
-}
-
 .hero-section {
     background: var(--bg-gradient);
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
     position: relative;
-    padding: 4rem 0;
 }
 
 .hero-section::before {
     content: '';
+    /* Reativando o pseudo-elemento */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
+    background: none;
+    /* Ajuste a opacidade (0.6) conforme necessário */
+    z-index: 1;
+    /* Coloca o overlay atrás do texto */
 }
 
 .hero-section .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    /* Garante que o texto fique acima do overlay */
+}
+
+.hero-section .text-highlight {
+    color: var(--primary-blue);
 }
 
 .hero-section h1 {
-    font-size: 3rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
 }
 
 .hero-section h2 {
     color: var(--primary-blue);
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .hero-section p {
     font-size: 1.1rem;
-    max-width: 500px;
-}
-
-.hero-section i {
-    color: var(--primary-blue);
-    transition: transform 0.3s ease;
-}
-
-.hero-section li:hover i {
-    transform: scale(1.2);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
 .btn-primary {
@@ -141,14 +153,6 @@ header {
     box-shadow: 0 6px 15px #007bff66;
 }
 
-.btn-primary i {
-    transition: transform 0.3s ease;
-}
-
-.btn-primary:hover i {
-    transform: translateX(5px);
-}
-
 .btn-outline-light {
     border-color: var(--text-light);
     color: var(--text-light);
@@ -162,16 +166,9 @@ header {
     border-color: var(--primary-blue);
 }
 
-#sobre,
-#servicos,
-#portfolio,
-#contato {
-    background: var(--bg-gradient);
-    padding: 4rem 0;
-}
-
 section {
     padding: 4rem 0;
+    background: var(--bg-gradient);
 }
 
 .card {
@@ -181,14 +178,6 @@ section {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px #0000004d;
-}
-
-.card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .card-title {
@@ -201,18 +190,74 @@ section {
     font-size: 0.95rem;
 }
 
-.contact-info a {
-    color: var(--text-light);
-    transition: color 0.3s ease;
+.img-logo {
+    width: auto;
+    /* Ajuste o tamanho conforme necessário */
+    height: auto;
 }
 
-.contact-info a:hover {
-    color: var(--primary-blue);
+.img-card {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .img-card {
+    transform: scale(1.05);
+}
+
+#equipe .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#equipe .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.community-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.parallax-bg {
+    background-image: url('../img/banner.png');
+    /* Caminho da sua imagem */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#sobre::before {
+    content: 'none';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1b1b1b80;
+    z-index: 0;
+}
+
+#sobre .text-center {
+    position: static;
 }
 
 .contact-info i {
     color: var(--primary-blue);
-    width: 24px;
+    min-width: 24px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -221,9 +266,15 @@ section {
     transform: scale(1.2);
 }
 
+.contact-info a {
+    gap: 3px;
+    padding: 0.5rem 0;
+    align-items: center;
+}
+
+
 footer {
     background-color: var(--header-footer-bg);
-    /* Altera para a cor desejada */
     color: var(--text-light);
 }
 
@@ -245,20 +296,6 @@ footer a:hover {
     color: var(--primary-blue);
 }
 
-#topo {
-    opacity: 0.7;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-#topo:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-#topo i {
-    color: var(--primary-blue);
-}
-
 iframe {
     width: 100%;
     max-width: 100%;
@@ -272,189 +309,97 @@ img {
     display: block;
 }
 
-.community-description {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    max-width: 500px;
-    font-weight: 400;
-    margin: 0 auto 2rem;
-    color: var(--text-light);
-    text-align: center;
+#topo {
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
 }
 
-/* Estilo para as imagens dentro dos cards da equipe */
-.img-card {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: transform 0.3s ease;
+#topo:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
-/* Efeito de hover nas imagens */
-.card:hover .img-card {
-    transform: scale(1.05);
+#topo i {
+    color: var(--primary-blue);
 }
 
-/* Ajuste para os cards da equipe, garantindo que o conteúdo fique alinhado */
-#equipe .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Ajuste no texto do card para evitar desalinhamento */
-#equipe .card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Estilo para a seção #sobre com fundo de imagem */
-#sobre {
-    padding: 3rem 0;
-    background: url('src/public/img/notebook.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    color: #fff;
-}
-
-#sobre::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #00000080;
-    z-index: 0;
-}
-
-#sobre .text-center {
-    position: relative;
-    z-index: 1;
-}
-
-#sobre h2 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-#sobre p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    max-width: 500px;
-    font-weight: 400;
-    margin: 0 auto 2rem;
-    color: var(--text-light);
-    text-align: center;
-}
-
-#sobre .btn-primary {
-    font-size: 1rem;
-    padding: 0.75rem 2rem;
-    display: inline-block;
-    margin: 0 auto;
-}
-
-/* Responsividade */
 @media (max-width: 992px) {
-    .community-description {
-        font-size: 1.05rem;
-        max-width: 100%;
-        margin: 0 auto 1.5rem;
-        text-align: center;
-    }
-
     .img-card {
         height: 220px;
     }
 
-    #sobre {
-        padding: 2.5rem 0;
-    }
-
-    #sobre h2 {
-        margin-bottom: 1rem;
-    }
-
+    .community-description,
     #sobre p {
         font-size: 1.05rem;
-        max-width: 100%;
-        margin: 0 auto 1.5rem;
-        text-align: center;
-    }
-
-    #sobre .btn-primary {
-        font-size: 0.95rem;
-        padding: 0.6rem 1.8rem;
     }
 }
 
 @media (max-width: 768px) {
-    .community-description {
-        font-size: 0.95rem;
-        text-align: center;
+    .navbar-brand img {
+        width: 120px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
     }
 
     .img-card {
         height: 200px;
     }
 
-    #equipe .card {
-        margin-bottom: 1.5rem;
-    }
-
-    #sobre {
-        padding: 2rem 0;
-    }
-
-    #sobre h2 {
-        margin-bottom: 0.75rem;
-    }
-
-    #sobre p {
-        font-size: 0.95rem;
+    footer .col-md-3 {
         text-align: center;
-    }
-
-    #sobre .btn-primary {
-        font-size: 0.9rem;
-        padding: 0.5rem 1.5rem;
-        display: block;
-        margin: 0 auto;
     }
 }
 
-@media (max-width: 576px) {
-    .community-description {
-        font-size: 0.9rem;
-        text-align: center;
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: clamp(1.6rem, 5vw, 2rem);
+        /* Garante que a fonte não fique muito pequena */
+    }
+
+    .hero-section h2 {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+
+    .btn-primary {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        padding: 0.6rem 1.4rem;
     }
 
     .img-card {
         height: 180px;
     }
 
-    #sobre p {
-        font-size: 0.9rem;
-        text-align: center;
+    .card-title {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
     }
 
-    #sobre .btn-primary {
-        font-size: 0.85rem;
-        padding: 0.5rem 1.2rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .hero-section h1 {
-        font-size: 1.5rem;
+    .card-text {
+        font-size: clamp(0.85rem, 2vw, 0.95rem);
     }
 
-    .hero-section h2 {
-        font-size: 1rem;
+    footer .small {
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
     }
 }
