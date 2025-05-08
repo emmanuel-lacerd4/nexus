@@ -311,22 +311,45 @@ section {
     text-align: center;
 }
 
-/* Contact and Footer */
+/* Estilo para a seção de contatos - SOLUÇÃO DEFINITIVA */
+.contact-info a {
+    text-decoration: none;
+    /* Remove sublinhado padrão */
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Sublinhado APENAS no texto (não no ícone) */
+.contact-info a span {
+    position: relative;
+}
+
+.contact-info a:hover span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+}
+
+/* Mantém ícone azul com animação */
 .contact-info i {
-    color: var(--primary-blue);
-    min-width: 24px;
-    text-align: center;
+    color: var(--primary-blue) !important;
     transition: transform 0.3s ease;
 }
 
 .contact-info a:hover i {
     transform: scale(1.2);
+    text-decoration: none !important;
 }
 
-.contact-info a {
-    gap: 3px;
-    padding: 0.5rem 0;
-    align-items: center;
+/* Remove qualquer sublinhado do link principal */
+.contact-info a:hover {
+    text-decoration: none !important;
 }
 
 footer {
@@ -382,27 +405,34 @@ img {
     color: var(--primary-blue);
 }
 
-/* Estilo do ícone do hambúrguer */
+/* Versão com Font Awesome */
 .navbar-toggler {
-    border: none;
+    border: none !important;
     padding: 0.5rem;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
 }
 
-.navbar-toggler:focus {
-    box-shadow: none;
+.custom-toggler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
 }
 
-.navbar-toggler-icon {
-    background-image: none;
-    position: relative;
+.custom-toggler span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    /* Bordas arredondadas nas linhas */
+    transition: all 0.3s ease;
 }
 
-.navbar-toggler-icon::before {
-    content: "\f0c9";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 1.5rem;
-    color: white;
+.navbar-toggler:hover .custom-toggler span {
+    background: #c8e6ff;
 }
 
 /* Media Queries */
