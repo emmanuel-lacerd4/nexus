@@ -2,12 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@500;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Variáveis e Reset */
 :root {
     --bg-dark: #1a1b26;
     --bg-gradient: linear-gradient(135deg, #2a2b38, #3b3c56);
@@ -20,6 +15,13 @@
     --textos: "Inter", sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
 html {
     scroll-behavior: smooth;
 }
@@ -39,7 +41,13 @@ h5 {
     color: var(--text-light);
 }
 
-/* Header */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header & Navigation */
 header {
     backdrop-filter: blur(10px);
     background-color: var(--header-footer-bg);
@@ -85,7 +93,36 @@ header {
     transform: scale(1.1);
 }
 
-/* Hero Section (Início) */
+/* Hamburger Menu */
+.navbar-toggler {
+    border: none !important;
+    padding: 0.5rem;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.custom-toggler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+}
+
+.custom-toggler span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover .custom-toggler span {
+    background: #c8e6ff;
+}
+
+/* Hero Section */
 .hero-section {
     background: var(--bg-gradient);
     min-height: 85vh;
@@ -105,35 +142,12 @@ header {
     width: 100%;
     height: 100%;
     opacity: 0.1;
-    /* Camada escura semi-transparente */
     z-index: 1;
 }
 
 .hero-section .container {
     position: relative;
     z-index: 2;
-}
-
-.hero-section h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    /* Cinza escuro para melhor contraste */
-}
-
-.hero-section h2 {
-    color: #00b2be;
-    /* Mantém o azul destacado */
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.hero-section p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.7;
-    color: #ffffff;
-    /* Cinza médio para o parágrafo */
 }
 
 .parallax-bg {
@@ -144,53 +158,25 @@ header {
     background-repeat: no-repeat;
 }
 
-/* Botão Saiba Mais - Tamanho fixo e alinhamento */
+/* Buttons */
 .btn-primary {
     min-width: 150px;
-    /* Largura mínima fixa */
     padding: 0.5rem 1.5rem;
-    /* Padding consistente */
     text-align: center;
-    /* Centraliza o conteúdo */
     display: inline-flex;
-    /* Alinhamento perfeito dos itens */
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    /* Espaço entre ícone e texto */
     border-radius: 50px !important;
-    /* Bordas arredondadas */
 }
 
-/* Animação do botão Saiba Mais */
-/* Animação refinada do botão Saiba Mais */
-/* Remove margens extras do ícone */
 .btn-primary i {
     margin: 0 !important;
-}
-
-/* Mantém a animação da seta */
-.btn-primary i.fa-arrow-right {
     transition: transform 0.3s ease;
 }
 
-.btn-primary:hover i.fa-arrow-right {
+.btn-primary:hover i {
     transform: translateX(5px);
-}
-
-/* Opcional: Efeito de "esticar" durante o movimento */
-.btn-primary:hover i.fa-arrow-right::before {
-    animation: stretchArrow 0.4s ease;
-}
-
-@keyframes stretchArrow {
-    50% {
-        transform: scaleX(1.2);
-    }
-
-    100% {
-        transform: scaleX(1);
-    }
 }
 
 .btn-outline-light {
@@ -212,8 +198,10 @@ section {
     background: var(--bg-gradient);
 }
 
+/* Cards */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #2a2b38e6;
 }
 
 .card:hover {
@@ -229,11 +217,6 @@ section {
 .card-text {
     color: var(--accent-gray);
     font-size: 0.95rem;
-}
-
-.img-logo {
-    width: auto;
-    height: auto;
 }
 
 .img-card {
@@ -262,66 +245,15 @@ section {
     justify-content: center;
 }
 
-#equipe .card {
-    background-color: #2a2b38e6;
-}
-
-#equipe .container {
-    position: relative;
-    z-index: 1;
-}
-
-/* Sobre Section */
-#sobre {
-    position: relative;
-    padding: 4rem 0;
-}
-
-#sobre::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Substitua pelo caminho correto */
-    z-index: 0;
-    opacity: 0.8;
-}
-
-#sobre .text-center {
-    position: relative;
-    z-index: 1;
-}
-
-#sobre h2 {
-    color: #1a73e8;
-    /* Cinza escuro para melhor contraste */
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-#sobre .community-description {
-    color: #ffffff;
-    /* Cinza médio para o texto descritivo */
-    font-size: 1.15rem;
-    line-height: 1.7;
-    max-width: 500px;
-    margin: 0 auto 2rem;
-    text-align: center;
-}
-
-/* Estilo para a seção de contatos - SOLUÇÃO DEFINITIVA */
+/* Contact Section */
 .contact-info a {
     text-decoration: none;
-    /* Remove sublinhado padrão */
     position: relative;
     display: inline-flex;
     align-items: center;
     gap: 8px;
 }
 
-/* Sublinhado APENAS no texto (não no ícone) */
 .contact-info a span {
     position: relative;
 }
@@ -330,13 +262,12 @@ section {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: -4px;
     width: 100%;
-    height: 1px;
-    background: currentColor;
+    height: 2px;
+    background: var(--primary-blue);
 }
 
-/* Mantém ícone azul com animação */
 .contact-info i {
     color: var(--primary-blue) !important;
     transition: transform 0.3s ease;
@@ -344,14 +275,9 @@ section {
 
 .contact-info a:hover i {
     transform: scale(1.2);
-    text-decoration: none !important;
 }
 
-/* Remove qualquer sublinhado do link principal */
-.contact-info a:hover {
-    text-decoration: none !important;
-}
-
+/* Footer */
 footer {
     background-color: var(--header-footer-bg);
     color: var(--text-light);
@@ -375,19 +301,7 @@ footer a:hover {
     color: var(--primary-blue);
 }
 
-iframe {
-    width: 100%;
-    max-width: 100%;
-    height: 350px;
-    border: 0;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
+/* Back to Top */
 #topo {
     opacity: 0.7;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -405,38 +319,7 @@ img {
     color: var(--primary-blue);
 }
 
-/* Versão com Font Awesome */
-.navbar-toggler {
-    border: none !important;
-    padding: 0.5rem;
-    border-radius: 8px !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-}
-
-.custom-toggler {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 24px;
-}
-
-.custom-toggler span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background: white;
-    border-radius: 2px;
-    /* Bordas arredondadas nas linhas */
-    transition: all 0.3s ease;
-}
-
-.navbar-toggler:hover .custom-toggler span {
-    background: #c8e6ff;
-}
-
 /* Media Queries */
-/* Ajustes para o menu hambúrguer */
 @media (max-width: 992px) {
     .navbar-collapse {
         background-color: var(--header-footer-bg);
@@ -447,22 +330,17 @@ img {
 
     .navbar-nav {
         flex-direction: column !important;
-        /* Força o layout vertical */
         align-items: flex-start !important;
-        /* Alinha os itens à esquerda */
     }
 
     .navbar-nav .nav-item {
         margin: 0.5rem 0 !important;
-        /* Espaçamento vertical entre itens */
         width: 100%;
-        /* Ocupa toda a largura */
     }
 
     .navbar-nav .nav-link {
         padding: 0.5rem 1rem !important;
         width: 100%;
-        /* Ocupa toda a largura */
     }
 
     .navbar-nav .btn-primary {
@@ -474,19 +352,16 @@ img {
 }
 
 @media (max-width: 768px) {
-
     .btn-primary {
         min-width: 140px;
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
 
-    /* Ajuste para os cards */
     #equipe .row {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-        /* Espaçamento entre os cards */
     }
 
     #equipe .col-md-3 {
@@ -495,12 +370,11 @@ img {
         margin: 0 auto;
     }
 
-    .card {
-        margin-bottom: 1.5rem;
+    .img-card {
+        height: 200px;
     }
 }
 
-/* Ajustes para telas muito pequenas */
 @media (max-width: 576px) {
     #equipe .col-md-3 {
         max-width: 100%;
@@ -510,27 +384,6 @@ img {
         height: 250px;
     }
 }
-
-.hero-section h1 {
-    font-size: 2rem;
-}
-
-.hero-section h2 {
-    font-size: 1.2rem;
-}
-
-.hero-section p {
-    font-size: 1rem;
-}
-
-.img-card {
-    height: 200px;
-}
-
-footer .col-md-3 {
-    text-align: center;
-}
-
 
 @media (max-width: 480px) {
     .hero-section h1 {
