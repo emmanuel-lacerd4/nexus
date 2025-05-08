@@ -16,7 +16,6 @@
     --secondary-blue: #1a73e8;
     --accent-gray: #b0b0b0;
     --header-footer-bg: #2c2f33;
-
     --titulo: "Roboto", sans-serif;
     --textos: "Inter", sans-serif;
 }
@@ -40,6 +39,7 @@ h5 {
     color: var(--text-light);
 }
 
+/* Header */
 header {
     backdrop-filter: blur(10px);
     background-color: var(--header-footer-bg);
@@ -85,6 +85,7 @@ header {
     transform: scale(1.1);
 }
 
+/* Hero Section (Início) */
 .hero-section {
     background: var(--bg-gradient);
     min-height: 85vh;
@@ -96,30 +97,100 @@ header {
     position: relative;
 }
 
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    /* Camada escura semi-transparente */
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    /* Cinza escuro para melhor contraste */
+}
+
+.hero-section h2 {
+    color: #00b2be;
+    /* Mantém o azul destacado */
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #ffffff;
+    /* Cinza médio para o parágrafo */
+}
+
 .parallax-bg {
     background-image: url('../img/banner.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.8;
-    /* Ajuste para equilibrar a visibilidade da imagem */
 }
 
+/* Botão Saiba Mais - Tamanho fixo e alinhamento */
 .btn-primary {
-    background-color: var(--primary-blue);
-    border-color: var(--primary-blue);
-    font-family: var(--titulo);
-    padding: 0.5rem 2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
+    min-width: 150px;
+    /* Largura mínima fixa */
+    padding: 0.5rem 1.5rem;
+    /* Padding consistente */
+    text-align: center;
+    /* Centraliza o conteúdo */
+    display: inline-flex;
+    /* Alinhamento perfeito dos itens */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    /* Espaço entre ícone e texto */
+    border-radius: 50px !important;
+    /* Bordas arredondadas */
 }
 
-.btn-primary:hover {
-    background-color: var(--secondary-blue);
-    border-color: var(--secondary-blue);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px #007bff66;
+/* Animação do botão Saiba Mais */
+/* Animação refinada do botão Saiba Mais */
+/* Remove margens extras do ícone */
+.btn-primary i {
+    margin: 0 !important;
+}
+
+/* Mantém a animação da seta */
+.btn-primary i.fa-arrow-right {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover i.fa-arrow-right {
+    transform: translateX(5px);
+}
+
+/* Opcional: Efeito de "esticar" durante o movimento */
+.btn-primary:hover i.fa-arrow-right::before {
+    animation: stretchArrow 0.4s ease;
+}
+
+@keyframes stretchArrow {
+    50% {
+        transform: scaleX(1.2);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 .btn-outline-light {
@@ -135,6 +206,7 @@ header {
     border-color: var(--primary-blue);
 }
 
+/* Sections */
 section {
     padding: 4rem 0;
     background: var(--bg-gradient);
@@ -161,7 +233,6 @@ section {
 
 .img-logo {
     width: auto;
-    /* Ajuste o tamanho conforme necessário */
     height: auto;
 }
 
@@ -191,20 +262,19 @@ section {
     justify-content: center;
 }
 
-.community-description {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    max-width: 500px;
-    margin: 0 auto 2rem;
-    color: var(--text-light);
-    text-align: center;
+#equipe .card {
+    background-color: #2a2b38e6;
 }
 
+#equipe .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Sobre Section */
 #sobre {
     position: relative;
     padding: 4rem 0;
-    background: var(--bg-gradient);
-    /* Mantém o gradiente, mas podemos sobrescrever com a imagem */
 }
 
 #sobre::before {
@@ -214,17 +284,14 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: none;
-    /* Substitua pelo caminho da imagem fornecida */
+    /* Substitua pelo caminho correto */
     z-index: 0;
-    opacity: 0.9;
-    /* Ajuste para controlar a intensidade do fundo */
+    opacity: 0.8;
 }
 
 #sobre .text-center {
     position: relative;
     z-index: 1;
-    /* Garante que o texto fique acima do fundo */
 }
 
 #sobre h2 {
@@ -236,7 +303,7 @@ section {
 
 #sobre .community-description {
     color: #ffffff;
-    /* Cinza um pouco mais claro para o texto descritivo */
+    /* Cinza médio para o texto descritivo */
     font-size: 1.15rem;
     line-height: 1.7;
     max-width: 500px;
@@ -244,6 +311,7 @@ section {
     text-align: center;
 }
 
+/* Contact and Footer */
 .contact-info i {
     color: var(--primary-blue);
     min-width: 24px;
@@ -260,7 +328,6 @@ section {
     padding: 0.5rem 0;
     align-items: center;
 }
-
 
 footer {
     background-color: var(--header-footer-bg);
@@ -315,56 +382,129 @@ img {
     color: var(--primary-blue);
 }
 
+/* Estilo do ícone do hambúrguer */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+}
+
+.navbar-toggler-icon::before {
+    content: "\f0c9";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Media Queries */
+/* Ajustes para o menu hambúrguer */
 @media (max-width: 992px) {
-    .img-card {
-        height: 220px;
+    .navbar-collapse {
+        background-color: var(--header-footer-bg);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 0.25rem;
     }
 
-    .community-description,
-    #sobre p {
-        font-size: 1.05rem;
+    .navbar-nav {
+        flex-direction: column !important;
+        /* Força o layout vertical */
+        align-items: flex-start !important;
+        /* Alinha os itens à esquerda */
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0 !important;
+        /* Espaçamento vertical entre itens */
+        width: 100%;
+        /* Ocupa toda a largura */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem !important;
+        width: 100%;
+        /* Ocupa toda a largura */
+    }
+
+    .navbar-nav .btn-primary {
+        margin-left: 0 !important;
+        margin-top: 0.5rem;
+        display: block;
+        width: fit-content;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar-brand img {
-        width: 120px;
+
+    .btn-primary {
+        min-width: 140px;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
 
-    .navbar-nav {
+    /* Ajuste para os cards */
+    #equipe .row {
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        gap: 1.5rem;
+        /* Espaçamento entre os cards */
     }
 
-    .navbar-nav .nav-item {
-        margin-bottom: 0.5rem;
+    #equipe .col-md-3 {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
-    .hero-section h1 {
-        font-size: 2rem;
+    .card {
+        margin-bottom: 1.5rem;
     }
+}
 
-    .hero-section h2 {
-        font-size: 1.2rem;
-    }
-
-    .hero-section p {
-        font-size: 1rem;
+/* Ajustes para telas muito pequenas */
+@media (max-width: 576px) {
+    #equipe .col-md-3 {
+        max-width: 100%;
     }
 
     .img-card {
-        height: 200px;
-    }
-
-    footer .col-md-3 {
-        text-align: center;
+        height: 250px;
     }
 }
+
+.hero-section h1 {
+    font-size: 2rem;
+}
+
+.hero-section h2 {
+    font-size: 1.2rem;
+}
+
+.hero-section p {
+    font-size: 1rem;
+}
+
+.img-card {
+    height: 200px;
+}
+
+footer .col-md-3 {
+    text-align: center;
+}
+
 
 @media (max-width: 480px) {
     .hero-section h1 {
         font-size: clamp(1.6rem, 5vw, 2rem);
-        /* Garante que a fonte não fique muito pequena */
     }
 
     .hero-section h2 {
