@@ -125,13 +125,14 @@ header {
 /* Hero Section */
 .hero-section {
     background: var(--bg-gradient);
-    min-height: 85vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 3rem 1rem;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 .hero-section::before {
@@ -150,12 +151,41 @@ header {
     z-index: 2;
 }
 
+/* Hero Section Background */
 .parallax-bg {
     background-image: url('../img/banner.png');
-    background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-color: var(--bg-dark);
+}
+
+
+/* Imagens Responsivas */
+.img-logo {
+    max-width: 120px;
+    height: auto;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.img-card {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    background-color: transparent;
+}
+
+/* Container da imagem para evitar distorções */
+.card-img-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
 }
 
 /* Buttons */
@@ -202,6 +232,8 @@ section {
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #2a2b38e6;
+    border-radius: 10px !important;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -212,37 +244,62 @@ section {
 .card-title {
     color: var(--primary-blue);
     font-size: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
 .card-text {
     color: var(--accent-gray);
     font-size: 0.95rem;
-}
-
-.img-card {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: transform 0.3s ease;
+    margin-bottom: 1.5rem;
 }
 
 .card:hover .img-card {
     transform: scale(1.05);
 }
 
-#equipe .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* Cards da Equipe */
+#equipe {
+    position: relative;
+    min-height: 100vh;
+    /* Adicionado para cobrir toda a altura */
+    overflow: hidden;
+    /* Adicionado para evitar vazamentos */
 }
 
-#equipe .card-body {
-    flex-grow: 1;
+#equipe .container {
+    position: relative;
+    z-index: 2;
+}
+
+#equipe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    opacity: 0.9;
+    /* Ajuste para melhor legibilidade */
+    z-index: 1;
+}
+
+/* Ajuste para o conteúdo da equipe */
+#equipe .row {
+    position: relative;
+    z-index: 3;
+}
+
+/* Mantendo os estilos existentes dos cards */
+#equipe .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #2a2b38e6;
+    border-radius: 10px !important;
+    overflow: hidden;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    border: none !important;
 }
 
 /* Contact Section */
@@ -320,98 +377,144 @@ footer a:hover {
 }
 
 /* Media Queries */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
+    .img-card {
+        height: 220px;
+    }
+}
+
+@media (max-width: 992px) and (orientation: landscape) {
+    #equipe {
+        min-height: 100vh;
+    }
+
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+
+    /* Ajuste específico para a seção equipe em mobile */
+    #equipe.parallax-bg {
+        background-position: top center;
+        background-size: auto 100%;
+    }
+
+    /* Menu Hamburguer - Mantém na horizontal mesmo em mobile */
     .navbar-collapse {
         background-color: var(--header-footer-bg);
-        padding: 1rem;
+        padding: 0.5rem;
         margin-top: 0.5rem;
         border-radius: 0.25rem;
     }
 
     .navbar-nav {
-        flex-direction: column !important;
-        align-items: flex-start !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        width: 100%;
+        flex-wrap: wrap;
     }
 
     .navbar-nav .nav-item {
-        margin: 0.5rem 0 !important;
-        width: 100%;
+        margin: 0.25rem !important;
+        width: auto;
     }
 
     .navbar-nav .nav-link {
-        padding: 0.5rem 1rem !important;
-        width: 100%;
+        padding: 0.5rem 0.75rem !important;
+        width: auto;
+        display: inline-block;
+        white-space: nowrap;
     }
 
     .navbar-nav .btn-primary {
-        margin-left: 0 !important;
-        margin-top: 0.5rem;
-        display: block;
-        width: fit-content;
+        margin-left: 0.5rem !important;
+        margin-top: 0 !important;
+        width: auto;
+        text-align: center;
+        padding: 0.5rem 1rem !important;
+    }
+
+    /* Ajuste do ícone do botão */
+    .navbar-nav .btn-primary i {
+        margin-right: 0.5rem !important;
+    }
+
+    /* Banner em landscape */
+    @media (orientation: landscape) {
+        .hero-section {
+            min-height: 100vh;
+        }
+
+        .parallax-bg {
+            background-attachment: scroll;
+        }
     }
 }
 
 @media (max-width: 768px) {
-    .btn-primary {
-        min-width: 140px;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    #equipe .row {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    #equipe .col-md-3 {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    .img-card {
-        height: 200px;
-    }
-}
-
-@media (max-width: 576px) {
-    #equipe .col-md-3 {
-        max-width: 100%;
-    }
-
-    .img-card {
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section h1 {
-        font-size: clamp(1.6rem, 5vw, 2rem);
-    }
-
-    .hero-section h2 {
-        font-size: clamp(1rem, 3vw, 1.2rem);
-    }
-
-    .btn-primary {
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
-        padding: 0.6rem 1.4rem;
+    #equipe {
+        padding: 3rem 0;
     }
 
     .img-card {
         height: 180px;
     }
 
-    .card-title {
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    #equipe .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
-    .card-text {
-        font-size: clamp(0.85rem, 2vw, 0.95rem);
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 576px) {
+    .navbar-nav {
+        justify-content: center;
     }
 
-    footer .small {
-        font-size: clamp(0.75rem, 2vw, 0.85rem);
+    .navbar-nav .nav-item {
+        margin: 0.1rem !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem !important;
+        font-size: 0.9rem;
+    }
+
+    .navbar-nav .btn-primary {
+        padding: 0.5rem !important;
+        margin-left: 0.25rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-card {
+        height: 140px;
+    }
+}
+
+@media (max-width: 360px) {
+    .img-card {
+        height: 120px;
+    }
+}
+
+/* Ajuste para telas extremamente pequenas */
+@media (max-width: 360px) {
+    .navbar-nav .nav-link {
+        padding: 0.3rem !important;
+        font-size: 0.8rem;
+    }
+    
+    .navbar-nav .nav-link i {
+        margin-right: 0.2rem !important;
+    }
+    
+    .navbar-nav .btn-primary {
+        padding: 0.3rem 0.5rem !important;
     }
 }
