@@ -23,7 +23,11 @@
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <div class="custom-toggler">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -52,7 +56,7 @@
         </div>
     </main>
 
-    <section id="sobre" class="py-5">
+    <section id="sobre" class="py-5 bg-dark">
         <div class="container text-white">
             <div class="text-center">
                 <h2 class="h3 fw-bold mb-3">Nossa Comunidade Tecnológica</h2>
@@ -65,14 +69,15 @@
         </div>
     </section>
 
-    <section id="equipe" class="py-5 parallax-bg">
+    <section id="equipe" class="parallax-bg">
         <div class="container text-white py-5">
             <h2 class="h3 fw-bold text-center mb-5">Nossa Equipe</h2>
             <div class="row g-4">
-                <!-- Cards da equipe permanecem os mesmos -->
-                <div class="col-md-3">
-                    <div class="card h-100 border-0 bg-dark text-white text-center">
-                        <img src="src/public/img/emmanuel.jpeg" loading="lazy" alt="emmanuel" width="800" height="800">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card h-100 border-0 bg-dark bg-opacity-75 text-white text-center">
+                        <div class="card-img-container">
+                            <img src="src/public/img/emmanuel.jpeg" loading="lazy" alt="emmanuel" class="img-card">
+                        </div>
                         <div class="card-body">
                             <h3 class="card-title">Emmanuel L. Nogueira</h3>
                             <p class="card-text">Teste de Qualidade</p>
@@ -81,9 +86,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card h-100 border-0 bg-dark text-white text-center">
-                        <img src="src/public/img/marcos.jpeg" loading="lazy" alt="marcos" width="800" height="800">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card h-100 border-0 bg-dark bg-opacity-75 text-white text-center">
+                        <div class="card-img-container">
+                            <img src="src/public/img/marcos.jpeg" loading="lazy" alt="marcos" class="img-card">
+                        </div>
                         <div class="card-body">
                             <h3 class="card-title">Marcos Almeida</h3>
                             <p class="card-text">Desenvolvedor Full Stack</p>
@@ -92,9 +99,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card h-100 border-0 bg-dark text-white text-center">
-                        <img src="src/public/img/andrew.jpeg" loading="lazy" alt="andrew" width="800" height="800">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card h-100 border-0 bg-dark bg-opacity-75 text-white text-center">
+                        <div class="card-img-container">
+                            <img src="src/public/img/andrew.jpeg" loading="lazy" alt="andrew" class="img-card">
+                        </div>
                         <div class="card-body">
                             <h3 class="card-title">Andrew Dantas</h3>
                             <p class="card-text">Designer UI/UX</p>
@@ -103,9 +112,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card h-100 border-0 bg-dark text-white text-center">
-                        <img src="src/public/img/joao.jpeg" loading="lazy" alt="joao" width="800" height="800">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card h-100 border-0 bg-dark bg-opacity-75 text-white text-center">
+                        <div class="card-img-container">
+                            <img src="src/public/img/joao.jpeg" loading="lazy" alt="joao" class="img-card">
+                        </div>
                         <div class="card-body">
                             <h3 class="card-title">João Fonseca</h3>
                             <p class="card-text">Especialista em Suporte</p>
@@ -117,7 +128,8 @@
             </div>
         </div>
     </section>
-    <section id="contato" class="py-5">
+
+    <section id="contato" class="py-5 bg-dark">
         <div class="container text-white">
             <h2 class="h3 fw-bold text-left mb-5">Entre em Contato</h2>
             <div class="row g-4">
@@ -158,11 +170,12 @@
     <footer class="py-5 bg-dark text-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 mb-4">
+                <div class="col-12 text-center mb-4">
                     <img src="src/public/img/logo.jpeg" alt="Logotipo NEXUS" class="img-logo mb-3">
-                    <p class="small">Transformando ideias em soluções digitais inovadoras.</p>
+                    <p class="small mx-auto" style="max-width: 300px;">Transformando ideias em soluções digitais
+                        inovadoras.</p>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-6 mb-4">
                     <h5>Navegação</h5>
                     <ul class="list-unstyled small">
                         <li><a href="#inicio" class="text-white text-decoration-none">Início</a></li>
@@ -171,7 +184,7 @@
                         <li><a href="#contato" class="text-white text-decoration-none">Contato</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-6 mb-4">
                     <h5>Contato</h5>
                     <p class="small">R. Cel. Luís Americano, 130, Tatuapé, São Paulo - SP<br>(11)
                         2191-2900<br>nexusti99@gmail.com
