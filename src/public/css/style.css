@@ -217,6 +217,28 @@ header {
     z-index: 2;
 }
 
+/* Container principal da equipe */
+#equipe .container {
+    padding: 20px;
+}
+
+/* Linha dos cards */
+#equipe .row {
+    margin: 0 -15px;
+    /* Compensa o margin dos cards */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Colunas responsivas */
+#equipe .col-md-3 {
+    padding: 15px !important;
+    /* Espaçamento interno garantido */
+    flex: 0 0 auto;
+    width: 100%;
+}
+
 /* Imagens Responsivas */
 .img-logo {
     max-width: 120px;
@@ -225,24 +247,26 @@ header {
     transition: transform 0.3s ease;
 }
 
-/* Ajustes para as imagens e cards */
+/* Ajuste para imagens completas */
 .img-card {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     object-position: center;
     transition: transform 0.3s ease;
 }
 
-/* Container da imagem do card */
+/* Container da imagem do card - IMAGEM COMPLETA SEM CORTES */
 .card-img-container {
     width: 100%;
-    height: 300px;
-    /* Altura fixa para desktop */
+    height: 250px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 
 /* Buttons */
@@ -284,7 +308,7 @@ section {
     padding: 4rem 0;
 }
 
-/* Cards */
+/* Cards com espaçamento consistente */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #2a2b38e6;
@@ -292,11 +316,17 @@ section {
     overflow: hidden;
     margin-bottom: 1.5rem;
     height: 100%;
+    border: none;
+    margin: 15px;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px #0000004d;
+}
+
+.card-body {
+    padding: 1.5rem;
 }
 
 .card-title {
@@ -426,7 +456,6 @@ footer {
     gap: 1rem;
     margin-top: 1rem;
     justify-content: center;
-    /* Centraliza os ícones sociais */
 }
 
 .contact-info p {
@@ -461,18 +490,22 @@ footer {
 
 /* Media Queries otimizadas */
 @media (max-width: 1199.98px) {
-
-    .img-card,
     .card-img-container {
-        height: 280px;
+        height: 220px;
+    }
+
+    #equipe .col-md-3 {
+        padding: 0 0.75rem;
+    }
+
+    .card-body {
+        padding: 1.25rem;
     }
 }
 
 @media (max-width: 991.98px) {
-
-    .img-card,
     .card-img-container {
-        height: 240px;
+        height: 200px;
     }
 
     #equipe .col-md-3 {
@@ -482,8 +515,8 @@ footer {
 
     #equipe .card {
         max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .navbar-collapse {
@@ -545,19 +578,10 @@ footer {
     }
 }
 
-@media (max-width: 767.98px) {
-
-    .img-card,
+/* Em landscape */
+@media (max-width: 767.98px) and (orientation: landscape) {
     .card-img-container {
-        height: 220px;
-    }
-
-    #equipe .card {
-        max-width: 90%;
-    }
-
-    #equipe .row {
-        justify-content: center;
+        height: 180px;
     }
 
     #equipe .col-md-3 {
@@ -565,29 +589,15 @@ footer {
         max-width: 50%;
     }
 
-    .hero-section {
-        padding: 2rem;
-    }
-
-    .card {
-        margin-bottom: 1rem;
-    }
-
-    .footer-container {
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-
-    .footer-column {
-        width: auto;
+    .card-body {
+        padding: 1rem;
     }
 }
 
-@media (max-width: 575.98px) {
-
-    .img-card,
+/* Em portrait */
+@media (max-width: 767.98px) and (orientation: portrait) {
     .card-img-container {
-        height: 200px;
+        height: 220px;
     }
 
     #equipe .col-md-3 {
@@ -595,12 +605,44 @@ footer {
         max-width: 100%;
     }
 
-    #equipe .card {
-        max-width: 100%;
+    /* Espaçamento extra para mobile */
+    #equipe .container {
+        padding: 15px;
+    }
+    .card {
+        margin: 10px;
     }
 
     .card-body {
         padding: 1.25rem;
+    }
+}
+
+@media (max-width: 575.98px) and (orientation: landscape) {
+    .card-img-container {
+        height: 200px;
+    }
+
+    #equipe .col-md-3 {
+        padding: 10px !important;
+    }
+
+    .card {
+        margin: 8px;
+    }
+}
+
+@media (max-width: 575.98px) and (orientation: portrait) {
+    .card-img-container {
+        height: 180px;
+    }
+
+    #equipe .col-md-3 {
+        padding: 10px !important;
+    }
+
+    .card {
+        margin: 8px;
     }
 
     .navbar-brand .img-logo {
@@ -615,47 +657,47 @@ footer {
         padding: 2rem 0;
     }
 
-    .parallax-bg {
-        background-size: cover;
-    }
-
     .footer-container {
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
     }
 
     .footer-column {
-        width: auto;
+        width: 100%;
+        max-width: 300px;
     }
 }
 
-@media (max-width: 480px) {
-    .hero-section {
-        padding: 1.5rem;
-    }
-
-    .img-card,
+@media (max-width: 480px) and (orientation: landscape) {
     .card-img-container {
         height: 180px;
     }
 
     .card-title {
-        font-size: 2.0rem;
+        font-size: 1.1rem;
     }
 
-    .footer-container {
-        flex-direction: row;
-        flex-wrap: nowrap;
+    .card-text {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+    .card-img-container {
+        height: 180px;
     }
 
-    .footer-column {
-        width: auto;
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 360px) {
-
-    .img-card,
     .card-img-container {
         height: 160px;
     }
@@ -668,14 +710,5 @@ footer {
         min-width: 120px;
         padding: 0.4rem 1rem;
         font-size: 0.9rem;
-    }
-
-    .footer-container {
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-
-    .footer-column {
-        width: auto;
     }
 }
