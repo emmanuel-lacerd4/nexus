@@ -180,16 +180,15 @@ header {
     transition: transform 0.3s ease;
 }
 
+/* Ajustes para as imagens e cards */
 .img-card {
     width: 100%;
     height: 250px;
     object-fit: cover;
     object-position: center;
     transition: transform 0.3s ease;
-    background-color: transparent;
 }
 
-/* Container da imagem para evitar distorções */
 .card-img-container {
     width: 100%;
     height: 250px;
@@ -197,7 +196,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
 }
 
 /* Buttons */
@@ -245,6 +243,7 @@ section {
     background-color: #2a2b38e6;
     border-radius: 10px !important;
     overflow: hidden;
+    margin-bottom: 1.5rem;
 }
 
 .card:hover {
@@ -453,7 +452,15 @@ footer {
     color: var(--primary-blue);
 }
 
-/* Media Queries */
+/* Media Queries otimizadas */
+@media (max-width: 1199.98px) {
+
+    .img-card,
+    .card-img-container {
+        height: 220px;
+    }
+}
+
 @media (max-width: 991.98px) {
     .navbar-collapse {
         position: fixed;
@@ -496,18 +503,19 @@ footer {
         width: 100%;
     }
 
-    .img-card {
-        height: 200px;
-    }
-
+    .img-card,
     .card-img-container {
         height: 200px;
     }
 
     #equipe .card {
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    section {
+        padding: 3rem 0;
     }
 
     .parallax-bg {
@@ -518,23 +526,38 @@ footer {
         flex-direction: column;
         gap: 2.5rem;
     }
-    
+
     .footer-column {
         width: 100%;
     }
 }
 
 @media (max-width: 767.98px) {
-    .img-card {
-        height: 180px;
-    }
 
+    .img-card,
     .card-img-container {
         height: 180px;
     }
 
     #equipe .card {
         max-width: 90%;
+    }
+
+    #equipe .row {
+        justify-content: center;
+    }
+
+    #equipe .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+
+    section {
+        padding: 2.5rem 0;
     }
 
     .parallax-bg {
@@ -545,27 +568,42 @@ footer {
         flex-direction: column;
         gap: 2.5rem;
     }
-    
+
     .footer-column {
         width: 100%;
     }
 }
 
 @media (max-width: 575.98px) {
-    .img-card {
+
+    .img-card,
+    .card-img-container {
         height: 160px;
     }
 
-    .card-img-container {
-        height: 160px;
+    #equipe .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
     #equipe .card {
         max-width: 100%;
     }
 
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .navbar-brand .img-logo {
+        max-width: 100px;
+    }
+
     .navbar-collapse {
         top: 60px;
+    }
+
+    section {
+        padding: 2rem 0;
     }
 
     .parallax-bg {
@@ -576,45 +614,71 @@ footer {
         flex-direction: column;
         gap: 2.5rem;
     }
-    
+
     .footer-column {
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .img-card {
+
+    .img-card,
+    .card-img-container {
         height: 140px;
     }
 
-    .card-img-container {
-        height: 140px;
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.85rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem !important;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
     }
 
     .footer-container {
         flex-direction: column;
         gap: 2.5rem;
     }
-    
+
     .footer-column {
         width: 100%;
     }
 }
 
 @media (max-width: 360px) {
-    .img-card {
+
+    .img-card,
+    .card-img-container {
         height: 120px;
     }
 
-    .card-img-container {
-        height: 120px;
+    .card-body {
+        padding: 1rem;
+    }
+
+    .btn-primary {
+        min-width: 120px;
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
     }
 
     .footer-container {
         flex-direction: column;
         gap: 2.5rem;
     }
-    
+
     .footer-column {
         width: 100%;
     }
