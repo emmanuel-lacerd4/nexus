@@ -241,9 +241,10 @@ section {
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #2a2b38e6;
-    border-radius: 10px !important;
+    border-radius: 10px;
     overflow: hidden;
     margin-bottom: 1.5rem;
+    height: 100%;
 }
 
 .card:hover {
@@ -267,45 +268,6 @@ section {
     transform: scale(1.05);
 }
 
-/* Cards da Equipe */
-#equipe {
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-#equipe .container {
-    position: relative;
-    z-index: 2;
-}
-
-#equipe::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(42, 43, 56, 0.7);
-    z-index: 1;
-}
-
-#equipe .row {
-    position: relative;
-    z-index: 3;
-}
-
-#equipe .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #2a2b38e6;
-    border-radius: 10px !important;
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    border: none !important;
-    margin-bottom: 20px;
-}
 
 /* Contact Section */
 .contact-info a {
@@ -451,235 +413,59 @@ footer {
 #topo i {
     color: var(--primary-blue);
 }
-
-/* Media Queries otimizadas */
-@media (max-width: 1199.98px) {
-
-    .img-card,
-    .card-img-container {
-        height: 220px;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        position: fixed;
-        top: 56px;
-        left: 0;
-        width: 100%;
-        background-color: var(--header-footer-bg);
-        padding: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .navbar-collapse.show {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
+/* Responsividade */
+@media (max-width: 768px) {
     .navbar-nav {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-    }
-
-    .navbar-nav .nav-item {
-        margin: 0.5rem 0 !important;
-        width: 100%;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 0.75rem !important;
-        width: 100%;
-    }
-
-    .navbar-nav .btn-primary {
-        margin: 0.5rem 0 !important;
-        width: 100%;
-    }
-
-    .img-card,
-    .card-img-container {
-        height: 200px;
-    }
-
-    #equipe .card {
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-
-    .parallax-bg {
-        background-attachment: scroll;
-    }
-
-    .footer-container {
         flex-direction: column;
-        gap: 2.5rem;
-    }
-
-    .footer-column {
-        width: 100%;
-    }
-}
-
-@media (max-width: 767.98px) {
-
-    .img-card,
-    .card-img-container {
-        height: 180px;
-    }
-
-    #equipe .card {
-        max-width: 90%;
-    }
-
-    #equipe .row {
-        justify-content: center;
-    }
-
-    #equipe .col-md-3 {
-        flex: 0 0 50%;
-        max-width: 50%;
+        gap: 0.5rem;
     }
 
     .hero-section {
-        padding: 2rem 1rem;
+        padding: 2rem;
     }
 
-    section {
-        padding: 2.5rem 0;
-    }
-
-    .parallax-bg {
-        background-position: center top;
+    .card {
+        margin-bottom: 1rem;
     }
 
     .footer-container {
         flex-direction: column;
-        gap: 2.5rem;
+        align-items: center;
     }
 
     .footer-column {
-        width: 100%;
-    }
-}
-
-@media (max-width: 575.98px) {
-
-    .img-card,
-    .card-img-container {
-        height: 160px;
+        text-align: center;
     }
 
-    #equipe .col-md-3 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    #equipe .card {
-        max-width: 100%;
-    }
-
-    .card-body {
-        padding: 1.25rem;
-    }
-
-    .navbar-brand .img-logo {
-        max-width: 100px;
-    }
-
-    .navbar-collapse {
-        top: 60px;
-    }
-
-    section {
-        padding: 2rem 0;
-    }
-
-    .parallax-bg {
-        background-size: cover;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        gap: 2.5rem;
-    }
-
-    .footer-column {
-        width: 100%;
+    /* Espaçamento entre os cards */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem; /* Adiciona um espaço entre os cards */
     }
 }
 
 @media (max-width: 480px) {
+    .hero-section {
+        padding: 1.5rem;
+    }
 
-    .img-card,
-    .card-img-container {
-        height: 140px;
+    .img-logo {
+        max-width: 100px;
     }
 
     .card-title {
         font-size: 1.1rem;
     }
 
-    .card-text {
-        font-size: 0.85rem;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 0.5rem !important;
-    }
-
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-
-    .hero-section p {
-        font-size: 1rem;
-    }
-
     .footer-container {
-        flex-direction: column;
-        gap: 2.5rem;
+        gap: 1rem;
     }
 
-    .footer-column {
+    /* Cards ocupando 100% da largura */
+    .card {
         width: 100%;
-    }
-}
-
-@media (max-width: 360px) {
-
-    .img-card,
-    .card-img-container {
-        height: 120px;
-    }
-
-    .card-body {
-        padding: 1rem;
-    }
-
-    .btn-primary {
-        min-width: 120px;
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        gap: 2.5rem;
-    }
-
-    .footer-column {
-        width: 100%;
+        margin-right: 0; /* Remove o espaço à direita */
     }
 }
