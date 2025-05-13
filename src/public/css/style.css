@@ -183,7 +183,7 @@ header {
 /* Ajustes para as imagens e cards */
 .img-card {
     width: 100%;
-    height: 250px;
+    height: 400px;
     object-fit: cover;
     object-position: center;
     transition: transform 0.3s ease;
@@ -191,7 +191,7 @@ header {
 
 .card-img-container {
     width: 100%;
-    height: 250px;
+    height: 400px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -241,7 +241,7 @@ section {
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #2a2b38e6;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     margin-bottom: 1.5rem;
     height: 100%;
@@ -442,7 +442,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 1rem; /* Adiciona um espaço entre os cards */
+        gap: 2rem; /* Adiciona um espaço entre os cards */
     }
 }
 
@@ -456,7 +456,7 @@ footer {
     }
 
     .card-title {
-        font-size: 1.1rem;
+        font-size: 2.0rem;
     }
 
     .footer-container {
