@@ -329,7 +329,8 @@ header {
 section {
     padding: 4rem 0;
 }
- /* Borda - Google Maps */
+
+/* Borda - Google Maps */
 .map-frame {
     border: 4px solid var(--primary-blue);
     border-radius: 10px;
