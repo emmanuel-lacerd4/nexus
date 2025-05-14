@@ -609,6 +609,7 @@ footer {
     #equipe .container {
         padding: 15px;
     }
+
     .card {
         margin: 10px;
     }
@@ -619,9 +620,10 @@ footer {
 
     /* Modificação para o footer - mantém layout horizontal */
     .footer-container {
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
         gap: 1.5rem;
     }
 
@@ -629,6 +631,15 @@ footer {
         flex: 1 1 45%;
         min-width: auto;
         max-width: none;
+        padding: 0 0.5rem;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-brand {
+        flex-basis: 100%;
+        text-align: center;
+        align-items: center;
     }
 }
 
@@ -671,16 +682,17 @@ footer {
         padding: 2rem 0;
     }
 
-    /* Ajuste adicional para telas muito pequenas */
+    /* Footer ajustado para telas menores */
     .footer-container {
-        flex-direction: row;
-        flex-wrap: wrap;
         gap: 1rem;
     }
 
     .footer-column {
-        flex: 1 1 100%;
-        max-width: none;
+        flex: 1 1 45%;
+    }
+
+    .footer-brand {
+        flex-basis: 100%;
     }
 }
 
@@ -710,6 +722,19 @@ footer {
     .card-text {
         font-size: 0.85rem;
     }
+
+    /* Footer ajustado para 480px */
+    .footer-container {
+        gap: 0.8rem;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+    }
+
+    .footer-brand {
+        flex-basis: 100%;
+    }
 }
 
 @media (max-width: 360px) {
@@ -725,5 +750,21 @@ footer {
         min-width: 120px;
         padding: 0.4rem 1rem;
         font-size: 0.9rem;
+    }
+
+    /* Footer ajustado para 360px */
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+        padding: 0 0.3rem;
+    }
+
+    .footer-brand {
+        flex-basis: 100%;
     }
 }
