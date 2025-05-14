@@ -22,21 +22,15 @@
 }
 
 /* Base Styles */
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--textos);
-    background: var(--bg-dark);
-    color: var(--text-light);
-}
-
 html,
 body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: var(--textos);
+    background: var(--bg-dark);
+    color: var(--text-light);
 }
 
 h1,
@@ -52,6 +46,46 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Cards com espaçamento consistente */
+.card {
+    background-color: #2a2b38e6;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito hover */
+.card:hover .img-card {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.card-title {
+    color: var(--primary-blue);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    color: var(--accent-gray);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Header & Navigation */
@@ -295,48 +329,12 @@ header {
 section {
     padding: 4rem 0;
 }
-
-/* Cards com espaçamento consistente */
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #2a2b38e6;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    height: 100%;
-    border: none;
-    margin: 15px;
-    display: flex;
-    flex-direction: column;
+ /* Borda - Google Maps */
+.map-frame {
+    border: 4px solid var(--primary-blue);
+    border-radius: 10px;
+    margin-top: 1rem;
 }
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px #0000004d;
-}
-
-.card-body {
-    padding: 1.5rem;
-    flex: 1;
-}
-
-.card-title {
-    color: var(--primary-blue);
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-}
-
-.card-text {
-    color: var(--accent-gray);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-}
-
-/* Efeito hover */
-.card:hover .img-card {
-    transform: scale(1.05);
-}
-
 
 /* Contact Section */
 .contact-info a {
@@ -379,10 +377,10 @@ footer {
 
 .footer-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .footer-column {
@@ -443,6 +441,20 @@ footer {
     color: var(--primary-blue);
 }
 
+.footer-contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.footer-contact-item i {
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
@@ -488,10 +500,6 @@ footer {
 
     #equipe .col-md-3 {
         padding: 0 0.75rem;
-    }
-
-    .card-body {
-        padding: 1.25rem;
     }
 }
 
@@ -563,7 +571,6 @@ footer {
     }
 
     .footer-container {
-        flex-direction: row;
         flex-wrap: nowrap;
     }
 
@@ -592,14 +599,6 @@ footer {
         padding: 5px !important;
         flex: 0 0 50%;
         max-width: 50%;
-    }
-
-    .card {
-        margin: 5px;
-    }
-
-    .card-body {
-        padding: 1rem;
     }
 
     .card-img-container {
@@ -662,15 +661,6 @@ footer {
         max-height: 180px;
     }
 
-    .card {
-        max-width: 100%;
-        margin: 10px auto;
-    }
-
-    .card-body {
-        padding: 1.25rem;
-    }
-
     #equipe .col-md-3 {
         flex: 0 0 100%;
         max-width: 100%;
@@ -724,10 +714,6 @@ footer {
     #equipe .col-md-3 {
         padding: 10px !important;
     }
-
-    .card {
-        margin: 8px;
-    }
 }
 
 @media (max-width: 575.98px) and (orientation: portrait) {
@@ -737,10 +723,6 @@ footer {
 
     #equipe .col-md-3 {
         padding: 10px !important;
-    }
-
-    .card {
-        margin: 8px;
     }
 
     .navbar-brand .img-logo {
@@ -775,32 +757,12 @@ footer {
         min-height: 160px;
         max-height: 160px;
     }
-
-    .card-title {
-        font-size: 1.1rem;
-    }
-
-    .card-text {
-        font-size: 0.85rem;
-    }
 }
 
 @media (max-width: 480px) and (orientation: portrait) {
     .card-img-container {
         min-height: 160px;
         max-height: 160px;
-    }
-
-    .card-body {
-        padding: 1rem;
-    }
-
-    .card-title {
-        font-size: 1.1rem;
-    }
-
-    .card-text {
-        font-size: 0.85rem;
     }
 
     footer .footer-container {
@@ -815,10 +777,6 @@ footer {
 @media (max-width: 360px) {
     .card-img-container {
         min-height: 160px;
-    }
-
-    .card-body {
-        padding: 1rem;
     }
 
     .btn-primary {
