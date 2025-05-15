@@ -683,25 +683,74 @@ footer {
 
 /* Em portrait */
 @media (max-width: 767.98px) and (orientation: portrait) {
+
     .container {
         padding-left: 1rem;
         padding-right: 1rem;
     }
 
-    .card-img-container {
-        min-height: 180px;
-        max-height: 180px;
-    }
-
-    #equipe .col-md-3 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 10px !important;
-    }
-
     /* Espaçamento extra para mobile */
     #equipe .container {
         padding: 15px;
+    }
+
+    #equipe .card {
+        max-width: 100%;
+        margin: 5px auto;
+        height: auto;
+        /* Altura automática para conteúdo */
+    }
+
+    .card-img-container {
+        min-height: 100px;
+        /* Altura reduzida */
+        max-height: 100px;
+        padding: 0;
+        /* Removendo padding para preencher totalmente */
+        overflow: hidden;
+        /* Garantindo que nada vaze */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        /* Removendo fundo */
+    }
+
+    .img-card {
+        height: 100%;
+        /* Preenche toda a altura */
+        width: 100%;
+        /* Preenche toda a largura */
+        object-fit: cover;
+        /* Cobre todo o espaço mantendo proporção */
+        object-position: center;
+        /* Centraliza a imagem */
+        margin: 0;
+        border: none;
+        /* Remove bordas */
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        /* Espaçamento interno reduzido */
+    }
+
+    .card-title {
+        font-size: 0.9rem;
+        /* Fonte menor */
+        margin-bottom: 0.2rem;
+        line-height: 1.2;
+    }
+
+    .card-text {
+        font-size: 0.75rem;
+        /* Fonte menor */
+        margin-bottom: 0.3rem;
+    }
+
+    #equipe .col-md-3 {
+        padding: 5px !important;
+        /* Espaçamento mínimo entre cards */
     }
 
     /* Modificação para o footer - mantém layout horizontal */
@@ -793,8 +842,16 @@ footer {
 
 @media (max-width: 480px) and (orientation: portrait) {
     .card-img-container {
-        min-height: 160px;
-        max-height: 160px;
+        min-height: 80px;
+        max-height: 80px;
+    }
+
+    .card-title {
+        font-size: 0.8rem;
+    }
+
+    .card-text {
+        font-size: 0.7rem;
     }
 
     footer .footer-container {
