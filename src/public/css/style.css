@@ -842,16 +842,8 @@ footer {
 
 @media (max-width: 480px) and (orientation: portrait) {
     .card-img-container {
-        min-height: 80px;
-        max-height: 80px;
-    }
-
-    .card-title {
-        font-size: 0.8rem;
-    }
-
-    .card-text {
-        font-size: 0.7rem;
+        min-height: 235px;
+        max-height: 235px;
     }
 
     footer .footer-container {
