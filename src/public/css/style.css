@@ -261,6 +261,18 @@ header {
     width: 100%;
 }
 
+/* Ajustes para alinhamento à esquerda */
+#contato .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#contato .contact-info {
+    text-align: left;
+    width: 100%;
+}
+
 /* Imagens Responsivas */
 .img-logo {
     max-width: 120px;
@@ -330,12 +342,30 @@ section {
     padding: 4rem 0;
 }
 
-/* Borda - Google Maps */
-.map-frame {
-    border: 4px solid var(--primary-blue);
-    border-radius: 10px;
-    margin: 2rem auto 0;
+/* Container do mapa */
+.map-container {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+/* Mapa com bordas arredondadas */
+.rounded-map {
+    border: 4px solid var(--primary-blue) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 16/9;
+    height: 100%;
+    width: 100%;
     display: block;
+}
+
+.ods-info {
+    border-left: 4px solid var(--secondary-blue);
+    background-color: var(--bg-dark) !important;
+    transition: all 0.3s ease;
+    height: 100%;
 }
 
 /* Contact Section */
@@ -472,7 +502,7 @@ footer {
     text-align: center;
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #ffffff1a;
     font-size: 0.9rem;
 }
 
@@ -653,25 +683,61 @@ footer {
 
 /* Em portrait */
 @media (max-width: 767.98px) and (orientation: portrait) {
+
     .container {
         padding-left: 1rem;
         padding-right: 1rem;
     }
 
-    .card-img-container {
-        min-height: 180px;
-        max-height: 180px;
-    }
-
-    #equipe .col-md-3 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 10px !important;
-    }
-
     /* Espaçamento extra para mobile */
     #equipe .container {
         padding: 15px;
+    }
+
+    #equipe .card {
+        max-width: 100%;
+        margin: 5px auto;
+        height: auto;
+        /* Altura automática para conteúdo */
+    }
+
+    .card-img-container {
+        min-height: 235px;
+        max-height: 235px;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+    }
+
+    .img-card {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        margin: 0;
+        border: none;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+    }
+
+    .card-title {
+        font-size: 0.9rem;
+        margin-bottom: 0.2rem;
+        line-height: 1.2;
+    }
+
+    .card-text {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
+    }
+
+    #equipe .col-md-3 {
+        padding: 5px !important;
     }
 
     /* Modificação para o footer - mantém layout horizontal */
@@ -720,7 +786,8 @@ footer {
 
 @media (max-width: 575.98px) and (orientation: portrait) {
     .card-img-container {
-        min-height: 200px;
+        min-height: 235px;
+        max-height: 235px;
     }
 
     #equipe .col-md-3 {
@@ -763,8 +830,8 @@ footer {
 
 @media (max-width: 480px) and (orientation: portrait) {
     .card-img-container {
-        min-height: 160px;
-        max-height: 160px;
+        min-height: 235px;
+        max-height: 235px;
     }
 
     footer .footer-container {
@@ -778,7 +845,8 @@ footer {
 
 @media (max-width: 360px) {
     .card-img-container {
-        min-height: 160px;
+        min-height: 235px;
+        max-height: 235px;
     }
 
     .btn-primary {
