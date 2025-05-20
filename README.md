@@ -5,3 +5,6 @@ Site da empresa Nexus descrevendo seus serviços na área de TI.
 
 ## Author
 Emmanuel L. Nogueira
+
+## One Page - NEXUS
+![qrcode](https://github.com/emmanuel-lacerd4/nexus/blob/main/src/public/img/qrcode.png)
